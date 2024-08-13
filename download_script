@@ -1,0 +1,13 @@
+date +"%T";
+#submit $i job
+jobid=$(zowe zos-jobs submit stdin < copy--------- --rff jobid --rft string --wfo)
+echo "Submitted $i job, JOB ID is $jobid"
+#wait for job to go to output
+echo "Job completed in OUTPUT status. Checking return-code"
+retcode=$(zowe zos-jobs view job-status-by-jobid "$jobid" --rff [retcode] --rft string)
+echo $retcode
+if [ ${retcode:3:4} != "0000" ]
+then
+    echo "Now download can start"
+fi
+date +"%T";
