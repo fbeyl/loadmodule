@@ -1,6 +1,6 @@
 date +"%T";
 #submit $i job
-jobid=$(zowe zos-jobs submit stdin < copy--------- --rff jobid --rft string --wfo)
+jobid=$(zowe zos-jobs submit stdin < copy_from_pdse_to_ussfile_job --rff jobid --rft string --wfo)
 echo "Submitted $i job, JOB ID is $jobid"
 #wait for job to go to output
 echo "Job completed in OUTPUT status. Checking return-code"
