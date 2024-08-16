@@ -1,6 +1,8 @@
 #
 # start tso session on lpar1
 #
+date +"%T";
+echo "Starting tso session on lpar1";
 sko=$(zowe zos-tso start address-space --sko);
 echo "Tso session: " $sko " started";
 echo "Copy from pdse to ussfile";
@@ -14,6 +16,8 @@ zowe zos-tso stop address-space $sko;
 #
 # start tso session on lpar2
 #
+date +"%T";
+echo "Starting tso session on lpar2";
 sko=$(zowe zos-tso start address-space --sko);
 echo "Tso session: " $sko " started";
 echo "Upload to ussfile";
@@ -24,3 +28,4 @@ resp=$(zowe zos-tso send address-space $sko --data "BPXBATCH SH cp  -X  /z/z2654
 # stop tso session on lpar2
 #
 zowe zos-tso stop address-space $sko;
+date +"%T";
