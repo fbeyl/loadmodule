@@ -7,6 +7,6 @@
 //STDERR   DD SYSOUT=*
 //STDPARM   DD *
 SH
-cd /z/z26544/load;
-cp  -X  JSONGEN2 "//'Z26544.LOAD3(JSONGEN2)'"
+cd /z/z26544/load.to.pdse;
+cp  -X  jsongen2 "//'Z26544.LOAD3(JSONGEN2)'"
 /*
